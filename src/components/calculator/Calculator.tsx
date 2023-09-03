@@ -6,9 +6,8 @@ import { menuItems as initialMenuMeals } from './menu/data/MenuItems';
 import Item from './menu/data/classes/Item';
 import MaterialsList from './calculated-materials/MaterialsList';
 import ItemIndexed from './menu/data/classes/IndexedItem';
-import { RequiredMaterial } from './meals/data/classes/Meal';
+import MealsRequiredMaterialsCalculator from './menu/data/MealsRequiredMaterialsCalculator';
 
-// export const MenuMealsContext = createContext(initialMenuMeals);
 const indexedInitialMenuMeals = initialMenuMeals.map((item, index) => new ItemIndexed(index, item));
 export default function Calculator() {
     const [menuItems, dispatch] = useReducer(menuReducer, indexedInitialMenuMeals);
@@ -19,22 +18,7 @@ export default function Calculator() {
     }
 
     const checkedMeals = menuItems.filter(item => !!item.checked);
-    const reqMaterials = checkedMeals.map(item => item.meal.getRequiredMaterials())
-        .reduce((prevReqMat, nextReqMat) => [...prevReqMat, ...nextReqMat], [])
-        .reduce((allReqMaterials: Array<RequiredMaterial>, nextReqMat) => {
-            const foundDup = allReqMaterials.find(existingReqMat => existingReqMat.material === nextReqMat.material);
-            if (foundDup) {
-                foundDup.count += nextReqMat.count;
-            } else {
-                allReqMaterials.push({material: nextReqMat.material, count: nextReqMat.count});
-            }
-            return allReqMaterials;
-        }, [])
-        // calculate required materials count
-        .map(reqMaterial => ({
-            material: reqMaterial.material, 
-            count: reqMaterial.count * portionsCount
-        }));
+    const reqMaterials = MealsRequiredMaterialsCalculator(checkedMeals.map(item => item.meal), portionsCount);
     
     return (
         <Box
@@ -46,10 +30,10 @@ export default function Calculator() {
         autoComplete="off"
         >
             <Grid container spacing={1}>
-                <Grid item xs={5}>
+                <Grid item xs={6} lg={7}>
                     <MaterialsList materials={reqMaterials}></MaterialsList>
                 </Grid>
-                <Grid item xs={7} container spacing={2} direction="column" 
+                <Grid item xs={6} lg={5} container spacing={2} direction="column" 
                     sx={{ minHeight: '100vh', maxHeight: '100vh'}}>
                     <Grid item xs={10} sx={{ overflowY: 'scroll' }}>
                         <Menu menuItems={menuItems} onMenuMealAction={dispatch}></Menu>
