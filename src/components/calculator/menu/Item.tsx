@@ -3,7 +3,7 @@ import './Item.css';
 import Meal from "../meals/Meal";
 import MealData from "../meals/data/Meal";
 import { Card, CardContent } from '@mui/material';
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 export default function Item(props: { meal: MealData, checked: boolean, onCheckToggle: (checked: boolean) => void }) {
     const [isChecked, setChecked] = useState(props.checked);
@@ -12,13 +12,11 @@ export default function Item(props: { meal: MealData, checked: boolean, onCheckT
       setChecked(current => !current);
       props.onCheckToggle(isChecked);
     };
-
+    
     return (
         <Card sx={{ minWidth: 100 }} onClick={toggleCheck} className={`menu-item ${isChecked ? 'item-checked' : ''}`}>
           <CardContent>
-            {props.meal instanceof MealData ? 
-            <Meal data={props.meal}></Meal> : 
-            <Meal data={props.meal}></Meal>}
+            {React.createElement(props.meal.getComponent(), {data: props.meal })}
           </CardContent>
         </Card>
     );
