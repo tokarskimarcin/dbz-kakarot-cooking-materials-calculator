@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './App.css';
 import Calculator from './components/calculator/Calculator';
 import {Grid} from '@mui/material';

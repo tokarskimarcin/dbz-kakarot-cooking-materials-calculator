@@ -1,3 +1,5 @@
+import './Item.css';
+
 import Meal from "../meals/Meal";
 import MealData from "../meals/data/Meal";
 import { Card, CardContent } from '@mui/material';
@@ -12,7 +14,7 @@ export default function Item(props: { meal: MealData, checked: boolean, onCheckT
     };
 
     return (
-        <Card sx={{ minWidth: 100 }} onClick={toggleCheck}>
+        <Card sx={{ minWidth: 100 }} onClick={toggleCheck} className={`menu-item ${isChecked ? 'item-checked' : ''}`}>
           <CardContent>
             {props.meal instanceof MealData ? 
             <Meal data={props.meal}></Meal> : 
