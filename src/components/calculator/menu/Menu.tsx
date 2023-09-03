@@ -9,7 +9,7 @@ export default function Menu(props: {menuItems: Array<IndexedMenuItem>, onMenuMe
     } 
     return (
         <Grid container spacing={2}>
-            {props.menuItems.map((item) => <Grid item xs={12} md={4} ><Item meal={item.item.meal} checked={item.item.checked} onCheckToggle={onItemClicked(item.id)}></Item></Grid>)}
+            {props.menuItems.map((item) => <Grid key={item.id} item xs={12} md={4} ><Item meal={item.item.meal} checked={item.item.checked} onCheckToggle={onItemClicked(item.id)}></Item></Grid>)}
         </Grid>
     )
 }

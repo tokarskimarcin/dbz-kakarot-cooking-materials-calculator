@@ -9,8 +9,11 @@ export default function Item(props: { meal: MealData, checked: boolean, onCheckT
     const [isChecked, setChecked] = useState(props.checked);
 
     const toggleCheck = () => {
-      setChecked(current => !current);
-      props.onCheckToggle(isChecked);
+      setChecked(current => {        
+        const nextValue = !current;
+        props.onCheckToggle(nextValue);
+        return nextValue;
+      });
     };
     
     return (
