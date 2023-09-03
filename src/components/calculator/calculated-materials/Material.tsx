@@ -1,8 +1,8 @@
-import Meal from "../meals/data/Meal";
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
 import {ExpandMore} from "@mui/icons-material";
+import MaterialData from "../meals/data/classes/Material";
 
-export default function Material(props: {meal: Meal, index: number}) {
+export default function Material(props: {material: MaterialData, index: number, count: number}) {
     return (
         <Accordion>
             <AccordionSummary
@@ -10,7 +10,7 @@ export default function Material(props: {meal: Meal, index: number}) {
             aria-controls="panel1a-content"
             id={`panel${props.index}-header`}
             >
-                <Typography>{props.meal.name}</Typography>
+                <Typography>{props.material.name} <b>x{props.count}</b></Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>

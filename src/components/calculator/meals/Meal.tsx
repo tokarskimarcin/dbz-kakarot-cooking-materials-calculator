@@ -1,5 +1,5 @@
 import {Typography} from '@mui/material';
-import MealData from './data/Meal';
+import MealData from './data/classes/Meal';
 
 
 export default function Meal(props: {data: MealData}) {

@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
-import Meal from "../meals/data/Meal";
 import Material from "./Material";
+import { RequiredMaterial } from "../meals/data/classes/Meal";
 
-export default function MaterialsList(props: {meals: Array<Meal>}) {    
+export default function MaterialsList(props: {materials: Array<RequiredMaterial>}) {    
     return (
         <Box sx={{ width: 1, height: 1, maxHeight: '100vh', background: '#eaeaea', overflowY: 'scroll', }}>
             {
-                props.meals.map((meal, index) => (<Material key={index} meal={meal} index={index}></Material>))
+                props.materials.map((requiredMaterial, index) => (<Material key={index} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>))
             }
         </Box>
     )

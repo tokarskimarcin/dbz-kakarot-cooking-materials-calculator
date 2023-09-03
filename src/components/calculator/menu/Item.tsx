@@ -1,7 +1,7 @@
 import './Item.css';
 
 import Meal from "../meals/Meal";
-import MealData from "../meals/data/Meal";
+import MealData from "../meals/data/classes/Meal";
 import { Card, CardContent } from '@mui/material';
 import React, {useState} from 'react';
 

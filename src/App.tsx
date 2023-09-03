@@ -10,9 +10,9 @@ function App() {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      sx={{ minHeight: '100vh' }}
+      sx={{ minHeight: '100vh'}}
     >
-      <Grid item xs={12}>
+      <Grid item xs={12} sx={{width: 1}}>
         <Calculator></Calculator>
       </Grid>
     </Grid>
