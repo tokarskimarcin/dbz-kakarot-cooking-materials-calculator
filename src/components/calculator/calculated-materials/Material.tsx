@@ -7,15 +7,14 @@ export default function Material(props: {material: MaterialData, index: number, 
         <Accordion>
             <AccordionSummary
             expandIcon={<ExpandMore />}
-            aria-controls="panel1a-content"
-            id={`panel${props.index}-header`}
+            aria-controls={`panel${props.index}-content`}
+            id={`pane${props.index}-header`}
             >
                 <Typography>{props.material.name} <b>x{props.count}</b></Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                    malesuada lacus ex, sit amet blandit leo lobortis eget.
+                    // TODO: add list of information about locations
                 </Typography>
             </AccordionDetails>
         </Accordion>
