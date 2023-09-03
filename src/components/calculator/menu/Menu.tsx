@@ -1,12 +1,15 @@
 import { Grid } from '@mui/material';
-import Meal from '../meals/Meal';
 import Item from './Item';
-import { menuMeals } from './data';
-export default function Menu() {
+import { IndexedMenuItem, MenuActions } from '../Calculator';
+import React from 'react';
+export default function Menu(props: {menuItems: Array<IndexedMenuItem>, onMenuMealAction: React.Dispatch<MenuActions>}) {
 
+    function onItemClicked(id: number) {
+        return (checked: boolean) => props.onMenuMealAction({type: 'toggleCheck', id, checked});
+    } 
     return (
         <Grid container spacing={2}>
-            {menuMeals.map((item) => <Grid item xs={12} md={4} ><Item meal={item.meal} checked={item.checked}></Item></Grid>)}
+            {props.menuItems.map((item) => <Grid item xs={12} md={4} ><Item meal={item.item.meal} checked={item.item.checked} onCheckToggle={onItemClicked(item.id)}></Item></Grid>)}
         </Grid>
     )
 }
