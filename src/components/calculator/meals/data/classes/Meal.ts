@@ -6,17 +6,96 @@ export type RequiredMaterial = {
     material: Material,
 };
 
+
+
+
+export enum BuffType {
+    MELEE_ATK = 'to Melee ATK',
+    HP = 'HP',
+    MELEE_DEF = 'to Melee DEF',
+    KI = 'Ki',
+    KI_ATK = 'to Ki ATK',
+    KI_DEF = 'to Ki DEF',
+    CRIT_RATE = 'to Critical Hit Rate',
+    Z_ORB = 'to Z Orbs earned in battle',
+    EXP = 'EXP'
+}
+
+export type BuffProps = {
+    value: number,
+    unit?: '%' | '', 
+    sign?: '+' | '-',
+};
+
+export class Buff {
+    constructor(
+        protected value: number,
+        protected type: BuffType,
+        protected u: '%' | '' = '',
+        protected s: '+' | '-' = '+',
+    ) {}
+
+    getLabel(): string {
+        return `${this.s}${this.value}${this.u} ${this.type}`;
+    }
+
+    sign(s: '+' | '-') {
+        this.s = s;
+        return this;
+    }
+    unit(u: '%' | '') {
+        this.u = u;
+        return this;
+    }
+    
+    static meleeAtk(value: number): Buff {
+        return new this(value, BuffType.MELEE_ATK);
+    }
+
+    static meleeDef(value: number): Buff {
+        return new this(value, BuffType.MELEE_DEF);
+    }
+
+    static exp(value: number): Buff {
+        return new this(value, BuffType.EXP);
+    }
+    static hp(value: number): Buff {
+        return new this(value, BuffType.HP);
+    }
+
+    static ki(value: number): Buff {
+        return new this(value, BuffType.KI);
+    }
+    static kiAtk(value: number): Buff {
+        return new this(value, BuffType.KI_ATK);
+    }
+
+    static kiDef(value: number): Buff {
+        return new this(value, BuffType.KI_DEF);
+    }
+    static critRate(value: number): Buff {
+        return new this(value, BuffType.CRIT_RATE);
+    }
+    static zOrb(value: number): Buff {
+        return new this(value, BuffType.Z_ORB);
+    }
+}
+
 export default class Meal {
     protected type: string = 'Meal';
 
     constructor(
         public name: string,
         protected materials: Array<RequiredMaterial>,
+        protected mealEffects: Array<Buff>,
+        protected statBoost: Array<Buff>,
         ) {}
 
     getRequiredMaterials = (): Array<RequiredMaterial> => this.materials;
 
     getType = (): string => this.type;
+    getMealEffect = (): Array<Buff> => this.mealEffects;
+    getStatBoost = (): Array<Buff> => this.statBoost;
 
     getComponent = (): (props: {data: Meal}) => JSX.Element => MealComponent;
 } 

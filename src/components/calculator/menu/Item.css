@@ -1,6 +1,6 @@
 
 
-.menu-item:hover {
+.menu-item > .content:hover {
     cursor: pointer;
 }
 

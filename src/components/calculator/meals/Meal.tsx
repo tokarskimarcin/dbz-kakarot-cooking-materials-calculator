@@ -6,10 +6,10 @@ export default function Meal(props: {data: MealData}) {
     
     return (
       <>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: 11 }} color="text.secondary" gutterBottom>
             {props.data.getType()}
         </Typography>
-        <Typography variant="h5" component="div">
+        <Typography variant="h6" component="div">
             {props.data.name}
         </Typography>
         {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
