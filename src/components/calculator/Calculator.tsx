@@ -26,6 +26,7 @@ export default function Calculator() {
         // sx={{
         //     '& > :not(style)': { m: 1 },
         // }}
+        onSubmit={(e) => e.preventDefault()}
         noValidate
         autoComplete="off"
         sx={{
