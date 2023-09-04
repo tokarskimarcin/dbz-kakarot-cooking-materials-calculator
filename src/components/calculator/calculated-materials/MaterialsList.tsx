@@ -4,22 +4,26 @@ import { RequiredMaterial } from "../meals/data/classes/Meal";
 
 export default function MaterialsList(props: {materials: Array<RequiredMaterial>}) {    
     return (
-        <>
+        <Box sx={{display: 'flex', flexDirection: 'column', position: 'relative', height: '100%'}}>
             <Typography variant="h5">
                 Required materials
             </Typography>
             <Divider />
-            <Grid container direction='column' spacing={2}
-            // sx={{ width: 1, top: 10, height: 1, maxHeight: '100vh', overflowY: 'scroll', }}
-            >
-                {
-                    props.materials.map((requiredMaterial, index) => 
-                    <Grid item xs={11}>
-                        <Material key={index} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
-                    </Grid>
-                    )
-                }
-            </Grid>
-        </>
+            <Box className='first-color'
+            sx={{position: 'relative', overflowY: 'auto', height: '90%', p: 0.5 }}>
+                <Grid container direction='column' 
+                spacing={2}>
+                    {
+                        props.materials.map((requiredMaterial, index) => 
+                        <Grid item>
+                            <Material key={index} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
+                        </Grid>
+                        )
+                    }
+
+                </Grid>
+            </Box>
+            <Divider />
+        </Box>
     )
 }

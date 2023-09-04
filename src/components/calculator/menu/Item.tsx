@@ -1,6 +1,5 @@
 import './Item.css';
 
-import Meal from "../meals/Meal";
 import MealData from "../meals/data/classes/Meal";
 import { Card, CardContent } from '@mui/material';
 import React, {useState} from 'react';
@@ -18,7 +17,7 @@ export default function Item(props: { meal: MealData, checked: boolean, onCheckT
     
     return (
         <Card sx={{ minWidth: 100 }} onClick={toggleCheck} className={`menu-item ${isChecked ? 'item-checked' : ''}`}>
-          <CardContent>
+          <CardContent >
             {React.createElement(props.meal.getComponent(), {data: props.meal })}
           </CardContent>
         </Card>

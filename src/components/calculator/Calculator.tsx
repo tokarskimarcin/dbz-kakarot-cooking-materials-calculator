@@ -28,37 +28,39 @@ export default function Calculator() {
         // }}
         noValidate
         autoComplete="off"
+        sx={{
+            display: 'flex',
+            width: 1,
+            height: 1,
+        }}
         >
-            <Grid container spacing={1}>
-                <Grid item xs={6} lg={7}>
-                    <MaterialsList materials={reqMaterials}></MaterialsList>
-                </Grid>
-                <Grid item xs={6} lg={5} container spacing={2} direction="column" 
-                    sx={{ minHeight: '100vh', maxHeight: '100vh'}}>
-                    <Grid item xs={10} sx={{ overflowY: 'scroll' }}>
-                        <Menu menuItems={menuItems} onMenuMealAction={dispatch}></Menu>
-                    </Grid>
-                    <Grid item xs={2} container
-                        alignItems="center"
-                        justifyContent="left">
-                        <TextField
-                            id="number-of-portions"
-                            label="Number of portions"
-                            type="number"
-                            value={portionsCount}
-                            onChange={handleOnChange}
-                            InputLabelProps={{
-                                shrink: true,
-                            }}
-                            InputProps={{
-                                inputProps: {
-                                    min: 1
-                                }
-                            }}
-                            />
-                    </Grid>
-                </Grid>
-            </Grid>
+            <Box sx={{display: 'flex', flexDirection: 'column', width: '50%', px: 1}}>
+                <MaterialsList materials={reqMaterials}></MaterialsList>
+            </Box>
+            
+            <Box sx={{display: 'flex', flexDirection: 'column', width: '50%', px: 1}}>
+                <Box sx={{display: 'flex', height: 'calc(100% - 80px)'}}>
+                    <Menu menuItems={menuItems} onMenuMealAction={dispatch}></Menu>
+                </Box>
+                
+                <Box sx={{display: 'flex', alignItems: 'center',  height: 80}}>
+                    <TextField
+                        id="number-of-portions"
+                        label="Number of portions"
+                        type="number"
+                        value={portionsCount}
+                        onChange={handleOnChange}
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        InputProps={{
+                            inputProps: {
+                                min: 1
+                            }
+                        }}
+                        />
+                </Box>
+            </Box>
         </Box>
     );
 }
