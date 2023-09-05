@@ -224,14 +224,14 @@ export const MEALS = {
 };
 
 export const MULTI_COURSE_MEAL = {
-    SPECIAL_MEAT_COURSE: new MultiCourseMeal('Special Meat Course',1 , [
+    SPECIAL_MEAT_COURSE: new MultiCourseMeal('Special Meat Course', 2 , [
         { meal: MEALS.MEATLOVERS_MEAT_FEAST, count: 1 },
         { meal: MEALS.JUICY_GRILLED_FISH, count: 1 },
         { meal: MEALS.EXTRA_JUICY_STEAMED_BUN, count: 1 },
     ], 
     [Buff.meleeAtk(25).pctg(), Buff.kiAtk(25).pctg(), Buff.critRate(7.5).pctg()], 
     [Buff.hp(10000), Buff.ki(3), Buff.meleeAtk(75)]),
-    SUPER_DELUXE_MEAT_COURSE: new MultiCourseMeal('Super Deluxe Meat Course',1 , [
+    SUPER_DELUXE_MEAT_COURSE: new MultiCourseMeal('Super Deluxe Meat Course', 3 , [
         { meal: MEALS.SMILING_ULTRA_MEGA_ROAST, count: 1 },
         { meal: MEALS.WILD_STEAK, count: 1 },
         { meal: MEALS.HEAP_OF_MEAT_RAMEN_Z, count: 1 },
@@ -240,7 +240,7 @@ export const MULTI_COURSE_MEAL = {
     ], 
     [Buff.hp(45).pctg(), Buff.ki(45).pctg(), Buff.exp(35).pctg()], 
     [Buff.hp(20000), Buff.ki(5), Buff.meleeAtk(300)]),
-    SUPER_DELUXE_SEAFOOD_COURSE: new MultiCourseMeal('Super Deluxe Seafood Course',1 , [
+    SUPER_DELUXE_SEAFOOD_COURSE: new MultiCourseMeal('Super Deluxe Seafood Course', 3 , [
         { meal: MEALS.BOILED_TREASUER_OF_THE_SEA, count: 1 },
         { meal: MEALS.HELLFIRE_TOFU, count: 1 },
         { meal: MEALS.WHIRLPOOL_PASTA, count: 1 },
@@ -249,7 +249,7 @@ export const MULTI_COURSE_MEAL = {
     ], 
     [Buff.hp(30).pctg(), Buff.meleeAtk(30).pctg(), Buff.meleeDef(30).pctg()], 
     [Buff.hp(20000), Buff.ki(5), Buff.meleeDef(5)]),
-    PREMIUM_MEAT_COURSE: new MultiCourseMeal('Premium Meat Course',1 , [
+    PREMIUM_MEAT_COURSE: new MultiCourseMeal('Premium Meat Course', 3 , [
         { meal: MEALS.ULTIMATE_MEAT_FEAST, count: 1 },
         { meal: MEALS.SEA_MONSTER_SOUP, count: 1 },
         { meal: MEALS.ROUGH_SEAS_SPARKING_PASTA, count: 1 },
@@ -258,7 +258,7 @@ export const MULTI_COURSE_MEAL = {
     ], 
     [Buff.ki(30).pctg(), Buff.kiAtk(30).pctg(), Buff.kiDef(30).pctg()], 
     [Buff.hp(20000), Buff.ki(5), Buff.kiAtk(300)]),
-    PREMIUM_SEAFOOD_COURSE: new MultiCourseMeal('Premium Seafood Course',1 , [
+    PREMIUM_SEAFOOD_COURSE: new MultiCourseMeal('Premium Seafood Course', 3 , [
         { meal: MEALS.OCEAN_JEWELRY_BOX_BOWL, count: 1 },
         { meal: MEALS.SEA_MONSTER_SOUP, count: 1 },
         { meal: MEALS.SMILING_ULTRA_MEGA_ROAST, count: 1 },
@@ -267,7 +267,7 @@ export const MULTI_COURSE_MEAL = {
     ], 
     [Buff.meleeAtk(35).pctg(), Buff.kiAtk(35).pctg(), Buff.critRate(10).pctg()], 
     [Buff.hp(20000), Buff.ki(5), Buff.meleeDef(150)]),
-    HEAVENLY_RAMEN_COURSE: new MultiCourseMeal('Heavenly Ramen Course',1 , [
+    HEAVENLY_RAMEN_COURSE: new MultiCourseMeal('Heavenly Ramen Course', 3 , [
         { meal: MEALS.HEAP_OF_MEAT_RAMEN_Z, count: 1 },
         { meal: MEALS.EXTRA_SOFT_CRUMBLY_FRIED_RICE, count: 1 },
         { meal: MEALS.BOILED_TREASUER_OF_THE_SEA, count: 1 },
