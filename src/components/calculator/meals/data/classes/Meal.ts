@@ -48,6 +48,10 @@ export class Buff {
         return this;
     }
     
+    pctg = () => this.unit('%');
+    sub = () => this.sign('-');
+    add = () => this.sign('+');
+
     static meleeAtk(value: number): Buff {
         return new this(value, BuffType.MELEE_ATK);
     }
@@ -81,11 +85,22 @@ export class Buff {
     }
 }
 
+export enum DishTypes {
+    MEAT = 'Meat Dish',
+    SEAFOOD = 'Seafood Dish',
+    RICE = 'Rice Dish',
+    NOODLE = 'Noodle Dish',
+    DESSERT = 'Dessert',
+    MIXED = 'Mixed',
+}
+
 export default class Meal {
     protected type: string = 'Meal';
 
     constructor(
         public name: string,
+        protected start: number,
+        protected dishType: DishTypes,
         protected materials: Array<RequiredMaterial>,
         protected mealEffects: Array<Buff>,
         protected statBoost: Array<Buff>,
