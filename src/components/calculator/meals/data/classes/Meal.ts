@@ -99,7 +99,7 @@ export default class Meal {
 
     constructor(
         public name: string,
-        protected start: number,
+        protected stars: number,
         protected dishType: DishTypes,
         protected materials: Array<RequiredMaterial>,
         protected mealEffects: Array<Buff>,
@@ -108,6 +108,7 @@ export default class Meal {
 
     getRequiredMaterials = (): Array<RequiredMaterial> => this.materials;
 
+    getStarsCount = () => this.stars;
     getType = (): string => this.type;
     getMealEffect = (): Array<Buff> => this.mealEffects;
     getStatBoost = (): Array<Buff> => this.statBoost;

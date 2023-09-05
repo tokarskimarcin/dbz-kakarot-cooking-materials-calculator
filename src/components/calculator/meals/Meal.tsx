@@ -1,13 +1,18 @@
 import {Typography} from '@mui/material';
 import MealData from './data/classes/Meal';
-
+import StarIcon from '@mui/icons-material/Star';
 
 export default function Meal(props: {data: MealData}) {
     
+  const starsCount = props.data.getStarsCount();
+  const Star = <StarIcon sx={{ fontSize: 13, color: 'gold' }}></StarIcon>;
+    const stars = starsCount < 5 ? 
+      Array(starsCount).fill(Star) :
+      <Typography display='inline-block' sx={{ fontSize: 13, fontWeight: 'bold', color: 'gold' }}>{Star}{starsCount}</Typography>
     return (
       <>
         <Typography sx={{ fontSize: 11 }} color="text.secondary" gutterBottom>
-            {props.data.getType()}
+            {stars} {props.data.getType()}
         </Typography>
         <Typography variant="h6" component="div">
             {props.data.name}
