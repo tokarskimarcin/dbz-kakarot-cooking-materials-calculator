@@ -33,37 +33,37 @@ export default function Menu(props: {menuItems: Array<ItemIndexed>, onMenuMealAc
                     onChange={handleAlignment}
                     size='small'
                     >
-                    <ToggleButton value="all" aria-label="left aligned">
+                    <ToggleButton key="all" value="all" aria-label="left aligned">
                         <Tooltip title="All">
                             <FilterAltOffIcon />
                         </Tooltip>
                     </ToggleButton>
-                    <ToggleButton value={DishTypes.MULTI_COURSE} aria-label="left aligned">
+                    <ToggleButton key={DishTypes.MULTI_COURSE} value={DishTypes.MULTI_COURSE} aria-label="left aligned">
                         <Tooltip title={DishTypes.MULTI_COURSE}>
                             <TextSnippetIcon />
                         </Tooltip>
                     </ToggleButton>
-                    <ToggleButton value={DishTypes.MEAT} aria-label="centered">
+                    <ToggleButton key={DishTypes.MEAT} value={DishTypes.MEAT} aria-label="centered">
                         <Tooltip title={DishTypes.MEAT}>
                             <img src='/dbz-kakarot-cooking-materials-calculator/filters/meat-filter.png' alt={DishTypes.MEAT} />
                         </Tooltip>
                     </ToggleButton>
-                    <ToggleButton value={DishTypes.SEAFOOD} aria-label="right aligned">
+                    <ToggleButton key={DishTypes.SEAFOOD} value={DishTypes.SEAFOOD} aria-label="right aligned">
                         <Tooltip title={DishTypes.SEAFOOD}>
                             <img src='/dbz-kakarot-cooking-materials-calculator/filters/fish-filter.png' alt={DishTypes.SEAFOOD} />
                         </Tooltip>
                     </ToggleButton>
-                    <ToggleButton value={DishTypes.RICE}aria-label="justified">
+                    <ToggleButton key={DishTypes.RICE} value={DishTypes.RICE}aria-label="justified">
                         <Tooltip title={DishTypes.RICE}>
                             <img src='/dbz-kakarot-cooking-materials-calculator/filters/rice-filter.png' alt={DishTypes.RICE} />
                         </Tooltip>
                     </ToggleButton>
-                    <ToggleButton value={DishTypes.NOODLE}aria-label="justified">
+                    <ToggleButton key={DishTypes.NOODLE} value={DishTypes.NOODLE}aria-label="justified">
                         <Tooltip title={DishTypes.NOODLE}>
                             <img src='/dbz-kakarot-cooking-materials-calculator/filters/noodles-filter.png' alt={DishTypes.NOODLE} />
                         </Tooltip>
                     </ToggleButton>
-                    <ToggleButton value={DishTypes.DESSERT}aria-label="justified">
+                    <ToggleButton key={DishTypes.DESSERT} value={DishTypes.DESSERT}aria-label="justified">
                         <Tooltip title={DishTypes.DESSERT}>
                             <img src='/dbz-kakarot-cooking-materials-calculator/filters/cake-filter.png' alt={DishTypes.DESSERT} />
                         </Tooltip>
@@ -75,9 +75,9 @@ export default function Menu(props: {menuItems: Array<ItemIndexed>, onMenuMealAc
             sx={{position: 'relative', overflowY: 'auto', height: '90%', p: 0.5 }}>
                 <Grid container 
                 spacing={2}>
-                {menuItems.map((item) => 
+                {menuItems.map((item) =>
                     <Grid item xs={12} md={6}>
-                        <Item meal={item.meal} checked={item.checked} onCheckToggle={onItemClicked(item.index)}></Item>
+                        <Item key={item.index} meal={item.meal} checked={item.checked} onCheckToggle={onItemClicked(item.index)}></Item>
                     </Grid>
                 )}
                 </Grid>

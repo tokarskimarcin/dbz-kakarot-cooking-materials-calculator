@@ -11,10 +11,10 @@ export default function Meal(props: {data: MealData}) {
       <Typography display='inline-block' sx={{ fontSize: 13, fontWeight: 'bold', color: 'gold' }}>{Star}{starsCount}</Typography>
     return (
       <>
-        <Typography sx={{ fontSize: 11 }} color="text.secondary" gutterBottom>
+        <Typography key='meta' sx={{ fontSize: 11 }} color="text.secondary" gutterBottom>
             {stars} {props.data.getType()}
         </Typography>
-        <Typography variant="h6" component="div">
+        <Typography key='name' variant="h6" component="div">
             {props.data.name}
         </Typography>
         {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">

@@ -25,8 +25,6 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export default function Item(props: { meal: MealData, checked: boolean, onCheckToggle: (checked: boolean) => void }) {
     const [isChecked, setChecked] = useState(props.checked);
     const [isExpanded, setIsExpanded] = useState(false);
-
-    if (isChecked) console.log(props.meal.name);
     
     const toggleCheck = () => {
       setChecked(current => {        
@@ -57,13 +55,13 @@ export default function Item(props: { meal: MealData, checked: boolean, onCheckT
           </CardActions>
           <Collapse in={isExpanded} timeout="auto" unmountOnExit>
             <Grid container spacing={1} sx={{px: 1}}>
-              <Grid item md={12} lg={6} xs={6}>
+              <Grid key="meal-effect" item md={12} lg={6} xs={6}>
                 <Typography color="text.secondary">Meal Effect</Typography>
                 <List dense>
                   {props.meal.getMealEffect().map(eff => <ListItem>{eff.getLabel()}</ListItem>)}
                 </List>
               </Grid>
-              <Grid item md={12} lg={6} xs={6}>
+              <Grid key="stat-boost" item md={12} lg={6} xs={6}>
                 <Typography color="text.secondary">StatBoost</Typography>
                 <List dense>
                   {props.meal.getStatBoost().map(stat => <ListItem>{stat.getLabel()}</ListItem>)}
