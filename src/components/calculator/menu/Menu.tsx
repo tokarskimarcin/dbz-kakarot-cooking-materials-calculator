@@ -45,27 +45,27 @@ export default function Menu(props: {menuItems: Array<ItemIndexed>, onMenuMealAc
                     </ToggleButton>
                     <ToggleButton key={DishTypes.MEAT} value={DishTypes.MEAT} aria-label="centered">
                         <Tooltip title={DishTypes.MEAT}>
-                            <img src='/dbz-kakarot-cooking-materials-calculator/filters/meat-filter.png' alt={DishTypes.MEAT} />
+                            <img src={`${process.env.PUBLIC_URL}/filters/meat-filter.png`} alt={DishTypes.MEAT} />
                         </Tooltip>
                     </ToggleButton>
                     <ToggleButton key={DishTypes.SEAFOOD} value={DishTypes.SEAFOOD} aria-label="right aligned">
                         <Tooltip title={DishTypes.SEAFOOD}>
-                            <img src='/dbz-kakarot-cooking-materials-calculator/filters/fish-filter.png' alt={DishTypes.SEAFOOD} />
+                            <img src={`${process.env.PUBLIC_URL}/filters/fish-filter.png`} alt={DishTypes.SEAFOOD} />
                         </Tooltip>
                     </ToggleButton>
                     <ToggleButton key={DishTypes.RICE} value={DishTypes.RICE}aria-label="justified">
                         <Tooltip title={DishTypes.RICE}>
-                            <img src='/dbz-kakarot-cooking-materials-calculator/filters/rice-filter.png' alt={DishTypes.RICE} />
+                            <img src={`${process.env.PUBLIC_URL}/filters/rice-filter.png`} alt={DishTypes.RICE} />
                         </Tooltip>
                     </ToggleButton>
                     <ToggleButton key={DishTypes.NOODLE} value={DishTypes.NOODLE}aria-label="justified">
                         <Tooltip title={DishTypes.NOODLE}>
-                            <img src='/dbz-kakarot-cooking-materials-calculator/filters/noodles-filter.png' alt={DishTypes.NOODLE} />
+                            <img src={`${process.env.PUBLIC_URL}/filters/noodles-filter.png`} alt={DishTypes.NOODLE} />
                         </Tooltip>
                     </ToggleButton>
                     <ToggleButton key={DishTypes.DESSERT} value={DishTypes.DESSERT}aria-label="justified">
                         <Tooltip title={DishTypes.DESSERT}>
-                            <img src='/dbz-kakarot-cooking-materials-calculator/filters/cake-filter.png' alt={DishTypes.DESSERT} />
+                            <img src={`${process.env.PUBLIC_URL}/filters/cake-filter.png`} alt={DishTypes.DESSERT} />
                         </Tooltip>
                     </ToggleButton>
                 </ToggleButtonGroup>
