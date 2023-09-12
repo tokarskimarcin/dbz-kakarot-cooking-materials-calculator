@@ -18,7 +18,7 @@ export default class MultiCourseMeal extends Meal {
         protected statBoost: Array<Buff>,
     ) {        
         const multipliedMeals = reqMeals.map(reqMeal => Array(reqMeal.count).fill(reqMeal.meal)).reduce((prevMeals, nextMeals) => [...prevMeals, ...nextMeals]);
-        super(name, stars, DishTypes.MIXED, JoinMealsRequiredMaterials(multipliedMeals), mealEffects, statBoost);
+        super(name, stars, DishTypes.MULTI_COURSE, JoinMealsRequiredMaterials(multipliedMeals), mealEffects, statBoost);
     }
     getComponent = (): (props: {data: Meal}) => JSX.Element => MultiCourseMealComponent;
 }

@@ -26,6 +26,8 @@ export default function Item(props: { meal: MealData, checked: boolean, onCheckT
     const [isChecked, setChecked] = useState(props.checked);
     const [isExpanded, setIsExpanded] = useState(false);
 
+    if (isChecked) console.log(props.meal.name);
+    
     const toggleCheck = () => {
       setChecked(current => {        
         const nextValue = !current;

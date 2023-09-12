@@ -91,7 +91,7 @@ export enum DishTypes {
     RICE = 'Rice Dish',
     NOODLE = 'Noodle Dish',
     DESSERT = 'Dessert',
-    MIXED = 'Mixed',
+    MULTI_COURSE = 'Multi-Course',
 }
 
 export default class Meal {
@@ -108,6 +108,7 @@ export default class Meal {
 
     getRequiredMaterials = (): Array<RequiredMaterial> => this.materials;
 
+    getDishType = (): DishTypes => this.dishType;
     getStarsCount = () => this.stars;
     getType = (): string => this.type;
     getMealEffect = (): Array<Buff> => this.mealEffects;
