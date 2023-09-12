@@ -2,6 +2,21 @@
   "short_name": "DBZ: Kakarot - Cooking Materials Calculator",
   "name": "Dragon Ball Z: Kakarot - Cooking Materials Calculator",
   "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "192x192 126x126 98x98 64x64 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
   ],
   "start_url": ".",
   "display": "standalone",
