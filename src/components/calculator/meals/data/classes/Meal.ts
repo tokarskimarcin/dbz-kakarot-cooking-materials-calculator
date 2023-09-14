@@ -7,7 +7,12 @@ export type RequiredMaterial = {
 };
 
 
+export type BuffUnit = '%' | '';
 
+const DEFAULT_BUFF_UNIT: BuffUnit = '';
+export type BuffSign = '+' | '-';
+
+const DEFAULT_BUFF_SIGN: BuffSign = '+';
 
 export enum BuffType {
     MELEE_ATK = 'to Melee ATK',
@@ -23,34 +28,43 @@ export enum BuffType {
 
 export type BuffProps = {
     value: number,
-    unit?: '%' | '', 
-    sign?: '+' | '-',
+    unit?: BuffUnit, 
+    sign?: BuffSign,
 };
 
 export class Buff {
     constructor(
         protected value: number,
         protected type: BuffType,
-        protected u: '%' | '' = '',
-        protected s: '+' | '-' = '+',
+        protected u: BuffUnit = DEFAULT_BUFF_UNIT,
+        protected s: BuffSign = DEFAULT_BUFF_SIGN,
     ) {}
+
+    getValue = (): number => Number(`${this.s}${this.value}`);
+    
+    getSign = (): string => this.s;
+
+    getType = (): BuffType => this.type;
+
+    getUnit = (): BuffUnit => this.u;
 
     getLabel(): string {
         return `${this.s}${this.value}${this.u} ${this.type}`;
     }
 
-    sign(s: '+' | '-') {
+    sign(s: BuffSign): this {
         this.s = s;
         return this;
     }
-    unit(u: '%' | '') {
+    unit(u: BuffUnit): this {
         this.u = u;
         return this;
     }
     
-    pctg = () => this.unit('%');
-    sub = () => this.sign('-');
-    add = () => this.sign('+');
+    pctg = (): this => this.unit('%');
+    sub = (): this => this.sign('-');
+    add = (): this => this.sign('+');
+    
 
     static meleeAtk(value: number): Buff {
         return new this(value, BuffType.MELEE_ATK);
@@ -109,7 +123,7 @@ export default class Meal {
     getRequiredMaterials = (): Array<RequiredMaterial> => this.materials;
 
     getDishType = (): DishTypes => this.dishType;
-    getStarsCount = () => this.stars;
+    getStarsCount = (): number => this.stars;
     getType = (): string => this.type;
     getMealEffect = (): Array<Buff> => this.mealEffects;
     getStatBoost = (): Array<Buff> => this.statBoost;

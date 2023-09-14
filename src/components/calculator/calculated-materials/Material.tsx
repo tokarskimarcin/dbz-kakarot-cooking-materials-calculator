@@ -8,7 +8,7 @@ export default function Material(props: {material: MaterialData, index: number, 
             <AccordionSummary
             expandIcon={<ExpandMore />}
             aria-controls={`panel${props.index}-content`}
-            id={`pane${props.index}-header`}
+            id={`panel${props.index}-header`}
             >
                 <Typography>{props.material.name} <b>x{props.count}</b></Typography>
             </AccordionSummary>

@@ -1,6 +1,6 @@
 import Meal, { Buff, DishTypes } from './Meal';
 import MultiCourseMealComponent from '../../MultiCourseMeal';
-import { JoinMealsRequiredMaterials } from '../../../menu/data/MealsRequiredMaterialsCalculator';
+import { JoinMealsRequiredMaterials } from '../../../menu/data/JoinMealsRequiredMaterials';
 
 export type RequiredMeal = {
     count: number,
