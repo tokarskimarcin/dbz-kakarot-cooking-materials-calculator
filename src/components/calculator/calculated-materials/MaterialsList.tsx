@@ -16,7 +16,7 @@ export default function MaterialsList(props: {materials: Array<RequiredMaterial>
                     {
                         props.materials.map((requiredMaterial, index) => 
                         <Grid item>
-                            <Material key={index} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
+                            <Material key={requiredMaterial.material.name} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
                         </Grid>
                         )
                     }
