@@ -1,22 +1,22 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
-import Material from "./Material";
-import { RequiredMaterial } from "../meals/data/classes/Meal";
+import Stat from "./Stat";
+import { Buff } from '../meals/data/classes/Buff';
 
-export default function MaterialsList(props: {materials: Array<RequiredMaterial>}) {    
+export default function StatsList(props: {buffs: Array<Buff>}) {    
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', position: 'relative', width: 1, height: 1}}>
             <Typography variant="h5">
-                Required materials
+                Stats
             </Typography>
             <Divider />
-            <Box className='first-color'
+            <Box 
             sx={{position: 'relative', overflowY: 'auto', height: '90%', p: 0.5 }}>
-                <Grid container direction='column' 
+                <Grid container
                 spacing={2}>
                     {
-                        props.materials.map((requiredMaterial, index) => 
-                        <Grid item>
-                            <Material key={index} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
+                        props.buffs.map((buff, index) => 
+                        <Grid item xs={12} md={6} lg={4}>
+                            <Stat key={index} buff={buff} index={index}></Stat>
                         </Grid>
                         )
                     }
