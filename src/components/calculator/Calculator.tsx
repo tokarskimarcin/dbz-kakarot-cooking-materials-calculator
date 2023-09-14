@@ -7,6 +7,8 @@ import Item from './menu/data/classes/Item';
 import MaterialsList from './calculated-materials/MaterialsList';
 import ItemIndexed from './menu/data/classes/IndexedItem';
 import MealsRequiredMaterialsCalculator from './menu/data/MealsRequiredMaterialsCalculator';
+import MealsStatBoostCalculator from './menu/data/MealsStatBoostCalculator';
+import StatsList from './calculated-stats/StatsList';
 
 const indexedInitialMenuMeals = initialMenuMeals.map((item, index) => new ItemIndexed(index, item));
 export default function Calculator() {
@@ -19,7 +21,7 @@ export default function Calculator() {
 
     const checkedMeals = menuItems.filter(item => !!item.checked);
     const reqMaterials = MealsRequiredMaterialsCalculator(checkedMeals.map(item => item.meal), portionsCount);
-    
+    const statsBoosts = MealsStatBoostCalculator(checkedMeals.map(item => item.meal), portionsCount);
     return (
         <Box
         component="form"
@@ -36,7 +38,12 @@ export default function Calculator() {
         }}
         >
             <Box sx={{display: 'flex', flexDirection: 'column', width: '50%', px: 1}}>
-                <MaterialsList materials={reqMaterials}></MaterialsList>
+                <Box sx={{display: 'flex', maxHeight: 'calc(100% - 100px)', height: 'calc(100% - 20%)'}}>
+                    <MaterialsList materials={reqMaterials}></MaterialsList>
+                </Box>
+                <Box sx={{display: 'flex', alignItems: 'center', minHeight: '100px', height: '20%'}}>
+                    <StatsList buffs={statsBoosts}></StatsList>
+                </Box>
             </Box>
             
             <Box sx={{display: 'flex', flexDirection: 'column', width: '50%', px: 1}}>

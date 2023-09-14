@@ -4,7 +4,7 @@ import { RequiredMaterial } from "../meals/data/classes/Meal";
 
 export default function MaterialsList(props: {materials: Array<RequiredMaterial>}) {    
     return (
-        <Box sx={{display: 'flex', flexDirection: 'column', position: 'relative', height: '100%'}}>
+        <Box sx={{display: 'flex', flexDirection: 'column', position: 'relative', width: 1, height: 1}}>
             <Typography variant="h5">
                 Required materials
             </Typography>
@@ -16,7 +16,7 @@ export default function MaterialsList(props: {materials: Array<RequiredMaterial>
                     {
                         props.materials.map((requiredMaterial, index) => 
                         <Grid item>
-                            <Material key={index} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
+                            <Material key={requiredMaterial.material.name} material={requiredMaterial.material} count={requiredMaterial.count} index={index}></Material>
                         </Grid>
                         )
                     }
