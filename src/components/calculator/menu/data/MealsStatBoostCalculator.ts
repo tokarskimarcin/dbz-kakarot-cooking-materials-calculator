@@ -1,4 +1,5 @@
-import Meal, { Buff, RequiredMaterial } from "../../meals/data/classes/Meal";
+import Meal, { RequiredMaterial } from "../../meals/data/classes/Meal";
+import { Buff } from '../../meals/data/classes/Buff';
 import { JoinMealsStatsBoost } from "./JoinMealsStatsBoost";
 
 export default function MealsStatBoostCalculator(meals: Array<Meal>, portionsCount: number): Array<Buff> {

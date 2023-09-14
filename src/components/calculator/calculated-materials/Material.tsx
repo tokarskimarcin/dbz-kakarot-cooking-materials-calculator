@@ -3,6 +3,7 @@ import {ExpandMore} from "@mui/icons-material";
 import MaterialData from "../meals/data/classes/Material";
 
 export default function Material(props: {material: MaterialData, index: number, count: number}) {
+    const numberFormatter = Intl.NumberFormat('en', {notation: 'compact'});
     return (
         <Accordion>
             <AccordionSummary
@@ -10,7 +11,7 @@ export default function Material(props: {material: MaterialData, index: number, 
             aria-controls={`panel${props.index}-content`}
             id={`panel${props.index}-header`}
             >
-                <Typography>{props.material.name} <b>x{props.count}</b></Typography>
+                <Typography>{props.material.name} <b>x{numberFormatter.format(props.count)}</b></Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>

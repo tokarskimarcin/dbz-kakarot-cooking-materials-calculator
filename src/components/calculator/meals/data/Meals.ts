@@ -1,5 +1,6 @@
 import MATERIALS from "./Materials";
-import Meal, {Buff, DishTypes} from "./classes/Meal";
+import Meal, {DishTypes} from "./classes/Meal";
+import { Buff } from './classes/Buff';
 import MultiCourseMeal from "./classes/MultiCourseMeal";
 
 export const MEALS = {

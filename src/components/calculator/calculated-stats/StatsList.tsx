@@ -1,6 +1,6 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import Stat from "./Stat";
-import { Buff } from "../meals/data/classes/Meal";
+import { Buff } from '../meals/data/classes/Buff';
 
 export default function StatsList(props: {buffs: Array<Buff>}) {    
     return (

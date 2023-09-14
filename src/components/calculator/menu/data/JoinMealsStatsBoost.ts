@@ -1,4 +1,5 @@
-import Meal, { Buff, RequiredMaterial } from "../../meals/data/classes/Meal";
+import Meal, { RequiredMaterial } from "../../meals/data/classes/Meal";
+import { Buff } from '../../meals/data/classes/Buff';
 
 export function JoinMealsStatsBoost(meals: Array<Meal>) : Array<Buff> {
     return meals.map(meal => meal.getStatBoost())
