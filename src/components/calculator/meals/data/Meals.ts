@@ -249,7 +249,7 @@ export const MULTI_COURSE_MEAL = {
         { meal: MEALS.DREAMY_FRUIT_GELATIN, count: 1 },
     ], 
     [Buff.hp(30).pctg(), Buff.meleeAtk(30).pctg(), Buff.meleeDef(30).pctg()], 
-    [Buff.hp(20000), Buff.ki(5), Buff.meleeDef(5)]),
+    [Buff.hp(20000), Buff.ki(5), Buff.meleeDef(150)]),
     PREMIUM_MEAT_COURSE: new MultiCourseMeal('Premium Meat Course', 3 , [
         { meal: MEALS.ULTIMATE_MEAT_FEAST, count: 1 },
         { meal: MEALS.SEA_MONSTER_SOUP, count: 1 },
@@ -276,6 +276,6 @@ export const MULTI_COURSE_MEAL = {
         { meal: MEALS.RICH_CUPCAKE, count: 1 },
     ], 
     [Buff.meleeDef(35).pctg(), Buff.kiDef(35).pctg(), Buff.zOrb(35).pctg()], 
-    [Buff.hp(20000), Buff.ki(5), Buff.kiAtk(150)]),
+    [Buff.hp(20000), Buff.ki(5), Buff.kiAtk(300)]),
 };
 
