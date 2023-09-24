@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dbz-kakarot-cooking-materials-calculator/static/css/main.de6321d8.css",
-    "main.js": "/dbz-kakarot-cooking-materials-calculator/static/js/main.5ca0a4c0.js",
+    "main.js": "/dbz-kakarot-cooking-materials-calculator/static/js/main.bfa14513.js",
     "static/js/787.07e43d3b.chunk.js": "/dbz-kakarot-cooking-materials-calculator/static/js/787.07e43d3b.chunk.js",
     "index.html": "/dbz-kakarot-cooking-materials-calculator/index.html",
     "main.de6321d8.css.map": "/dbz-kakarot-cooking-materials-calculator/static/css/main.de6321d8.css.map",
-    "main.5ca0a4c0.js.map": "/dbz-kakarot-cooking-materials-calculator/static/js/main.5ca0a4c0.js.map",
+    "main.bfa14513.js.map": "/dbz-kakarot-cooking-materials-calculator/static/js/main.bfa14513.js.map",
     "787.07e43d3b.chunk.js.map": "/dbz-kakarot-cooking-materials-calculator/static/js/787.07e43d3b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.de6321d8.css",
-    "static/js/main.5ca0a4c0.js"
+    "static/js/main.bfa14513.js"
   ]
 }
